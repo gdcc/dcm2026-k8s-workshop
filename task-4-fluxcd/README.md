@@ -280,12 +280,7 @@ While you have time, try these - each demonstrates a *different* Flux mechanism:
 
 ## Cleanup
 
-Leave everything running — we'll use this cluster for Dataverse next. To tear down later:
-
-```shell
-kubectl delete -k clusters/test                         # removes the Flux controllers and Kustomizations
-kubectl delete ns hello-flux hello-whoami --wait=false  # apps Flux deployed for you
-```
+Leave everything running — we'll use this cluster for Dataverse next.
 
 ## Next Task
 After the slides, we'll continue with [Task 5 — Dataverse on Kubernetes](../task-5-dataverse/README.md).
