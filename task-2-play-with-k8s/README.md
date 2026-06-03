@@ -40,6 +40,17 @@ Here's a neat trick to temporarily resolve an FQDN without modifying /etc/hosts.
 curl --resolve <FQDN>:80:<External IP of your Ingress> http://<FQDN>/...
 ```
 
+#### Alternative with minikube
+If you are running minikube, you can enable the ingress addon...
+```shell    
+minikube addons enable ingress
+```
+
+... and then port forward like this:
+```shell    
+kubectl port-forward -n ingress-nginx service/ingress-nginx-controller 8080:80
+```
+
 ### Step 2 - Deploy a stateless "whoami" application
 
 1. Deploy to the cluster: `kubectl apply -f step-2/whoami.yaml`
